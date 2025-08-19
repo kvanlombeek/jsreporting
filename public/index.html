@@ -10,14 +10,13 @@
   <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  integrity="sha512-o6eZRX2po+Z8E64zK4qfFXg2wXhvTtL0b6nlcMRYgQ9Jz76vYF5S1ZLVgGH4MGZtV6g8hFfHjQkfvZqKq8t8gw=="
   crossorigin="anonymous"
   referrerpolicy="no-referrer" />  
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-white/95 backdrop-blur border-b border-slate-200 z-10">
     <div class="flex items-center">
       <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
         <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
@@ -36,82 +35,61 @@
         </svg>
       </a>
     </div>
-    <ul class="font-montserrat items-center hidden md:flex">
-      <li class="mx-3 ">
-        <a class="growing-underline" href="howitworks">
-          How it works
-        </a>
-      </li>
-      <li class="growing-underline mx-3">
-        <a href="features">Features</a>
-      </li>
-      <li class="growing-underline mx-3">
-        <a href="pricing">Pricing</a>
-      </li>
-    </ul>
-    <div class="font-montserrat hidden md:block">
-      <button class="mr-6">Login</button>
-      <button class="py-2 px-4 text-white bg-black rounded-3xl">
-        Signup
+    
+    <div class="font-montserrat">
+      <button class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
+        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <span>Plan demo</span>
       </button>
     </div>
-    <div id="showMenu" class="md:hidden">
+    <div id="showMenu" class="hidden md:hidden" aria-hidden="true">
       <img src='dist/assets/logos/Menu.svg' alt="Menu icon" />
     </div>
   </nav>
-  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
-    <div id="hideMenu" class="flex justify-end">
-      <img src='dist/assets/logos/Cross.svg' alt="" class="h-16 w-16" />
-    </div>
-    <ul class="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl">
-      <li class="my-6">
-        <a href="howitworks">How it works</a>
-      </li>
-      <li class="my-6">
-        <a href="features">Features</a>
-      </li>
-      <li class="my-6">
-        <a href="pricing">Pricing</a>
-      </li>
-    </ul>
-  </div>
+  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down" aria-hidden="true"></div>
 
   <!-- Hero -->
   <section
-    class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
+    class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-gradient-to-b from-slate-50 to-slate-200">
     <div class="md:flex-1 md:mr-10">
-      <h1 class="font-pt-serif text-5xl font-bold mb-7">
+      <h1 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-7">
         Efficiënte registratie van orthopedische procedures.
         <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
           
         </span>
       </h1>
-      <p class="font-pt-serif font-normal mb-7">
+      <p class="font-pt-serif font-normal mb-7 max-w-xl text-slate-700">
         Met onze software registreer je snel de uitgevoerde procedure. Na een effiëcente invoer van de gegevens
         zorgen wij voor <span class="underline decoration-sky-500	decoration-solid decoration-2">tarificatie</span>, eventuele rapportage naar <span class="underline decoration-sky-500	decoration-solid decoration-2">Sciensano</span> en een <span class="underline decoration-sky-500	decoration-solid decoration-2">duidelijk verslag</span> voor de patiënt.
       </p>
-      <div class="font-montserrat">
-        <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
-          Call to action
-        </button>
-        <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-          Secondary action
-        </button>
+      <div class="font-montserrat hidden md:block">
+        <a href="#how-it-works" class="inline-flex items-center gap-3 text-slate-900 hover:text-black transition">
+          <img src='dist/assets/arrowDown.png' alt="Pijl naar beneden" class="h-5 w-5 md:h-6 md:w-6" />
+          <span class="text-lg md:text-xl font-semibold">meer ontdekken</span>
+        </a>
       </div>
     </div>
-    <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
-      <div class="relative">
+    <div class="flex justify-around md:block md:flex-1">
+      <!-- <div class="relative">
         <img src='dist/assets/Highlight1.svg' alt="" class="absolute -top-16 -left-10" />
+      </div> -->
+      <div class="relative p-3">
+        <img src='dist/assets/landingChirurgWondering.png' alt="Macbook" class="" />
       </div>
-      <img src='dist/assets/MacBook Pro.png' alt="Macbook" />
-      <div class="relative">
+      <!-- <div class="relative">
         <img src='dist/assets/Highlight2.svg' alt="" class="absolute -bottom-10 -right-6" />
-      </div>
+      </div> -->
+    </div>
+    <div class="md:hidden mt-4 mb-8 flex justify-center">
+      <a href="#how-it-works" class="inline-flex items-center gap-3 text-slate-900 hover:text-black transition">
+        <img src='dist/assets/arrowDown.png' alt="Pijl naar beneden" class="h-5 w-5" />
+        <span class="text-lg font-semibold">meer ontdekken</span>
+      </a>
     </div>
   </section>
 
   <!-- How it works -->
-  <section class="bg-black text-white sectionSize">
+  <section id="how-it-works" class="bg-black text-white sectionSize">
     <div>
       <h2 class="secondaryTitle bg-underline2 bg-100%">Registratie in 3 snelle stappen</h2>
     </div>
@@ -243,8 +221,50 @@
   </div>
 </section>
 
-  <!-- Pricing -->
+  <!-- Founders -->
   <section class="sectionSize bg-secondary">
+    <div>
+      <h2 class="secondaryTitle bg-underline3 bg-100%">De oprichters</h2>
+    </div>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Paul Gunst -->
+      <div class="flex items-start space-x-6">
+        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-3xl md:text-5xl flex-shrink-0" aria-label="Placeholder voor portret Paul Gunst">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="font-montserrat">
+          <h3 class="font-semibold text-xl flex items-center gap-3">Paul Gunst
+            <a href="#" aria-label="LinkedIn van Paul Gunst" class="text-slate-500 hover:text-slate-700">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </h3>
+          <p class="mt-2">
+            Paul is gepensioneerd orthopedisch chirurg. Hij voerde meer dan 2.000 heupoperaties uit. Hij was ook
+            hoofdarts van een groot Belgisch ziekenhuis en heeft een grondige kennis van geneeskunde.
+          </p>
+        </div>
+      </div>
+      <!-- Kasper Van Lombeek -->
+      <div class="flex items-start space-x-6">
+        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-3xl md:text-5xl flex-shrink-0" aria-label="Placeholder voor portret Kasper Van Lombeek">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+        </div>
+        <div class="font-montserrat">
+          <h3 class="font-semibold text-xl flex items-center gap-3">Kasper Van Lombeek
+            <a href="#" aria-label="LinkedIn van Kasper Van Lombeek" class="text-slate-500 hover:text-slate-700">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </h3>
+          <p class="mt-2">
+            Kasper is data scientist. Hij startte twee andere data-science gerelateerde startups.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="sectionSize bg-black text-white">
     <div>
       <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
     </div>
@@ -269,12 +289,13 @@
         </button>
       </div>
     
-      <div class="flex flex-col mx-6 shadow-2xl bg-secondary rounded-2xl py-5 px-8 my-8 md:mt-12 md:flex-1">
+      <div class="relative flex flex-col mx-6 rounded-2xl py-5 px-8 my-8 md:mt-12 md:flex-1 bg-white text-slate-900 shadow-xl ring-2 ring-white/60">
+        <span class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-black text-white px-3 py-1 text-xs font-montserrat">Meest gekozen</span>
         <h3 class="font-pt-serif font-normal text-2xl mb-4">
           Licentie arts
         </h3>
         <div class="font-montserrat font-bold text-2xl mb-4">
-          $100
+          €100
           <span class="font-normal text-base"> / month</span>
         </div>
     
@@ -291,7 +312,7 @@
           <p>Benefit #3</p>
         </div>
     
-        <button class="border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+        <button class="bg-black text-white rounded-xl text-lg py-3 mt-4 transition hover:-translate-y-0.5">
           Choose plan
         </button>
       </div>
@@ -325,7 +346,7 @@
   </section>
 
   <!-- FAQ  -->
-  <section class="sectionSize items-start bg-black text-white">
+  <section class="sectionSize items-start bg-secondary">
     <div>
       <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
         FAQ
@@ -343,7 +364,7 @@
         You can download it on Gumroad.com
       </div>
     </div>
-    <hr class="w-full bg-white" />
+    <hr class="w-full bg-black h-px" />
 
     <div toggleElement class="w-full py-4">
       <div class="flex justify-between items-center">
@@ -356,7 +377,7 @@
         Yes! For you it is free.
       </div>
     </div>
-    <hr class="w-full bg-white" />
+    <hr class="w-full bg-black h-px" />
 
     <div toggleElement class="w-full py-4">
       <div class="flex justify-between items-center">
@@ -369,7 +390,7 @@
         Yes! No doubt about it.
       </div>
     </div>
-    <hr class="w-full bg-white" />
+    <hr class="w-full bg-black h-px" />
 
   </section>
 
