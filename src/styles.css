@@ -14,11 +14,11 @@
   .section-full {
     @apply min-h-screen scroll-mt-24 flex flex-col justify-center;
   }
-  .section-blue {
-    @apply bg-gradient-to-b from-slate-200 via-slate-50 via-80% to-emerald-200;
-  }
   .section-dark {
-    @apply bg-gradient-to-b from-emerald-200 via-emerald-50 via-90% to-slate-200;
+    @apply bg-gradient-to-b from-slate-200 via-slate-50 via-80% to-sky-200;
+  }
+  .section-blue {
+    @apply bg-gradient-to-b from-sky-200 via-sky-50 via-90% to-slate-200;
   }
 }
 
