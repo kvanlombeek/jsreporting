@@ -4,7 +4,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tailwind CSS Starter</title>
+  <title>JS-Reporting: registratie van orthopedische procedures</title>
+  <meta name="description" content="JS-Reporting helpt orthopedische artsen met snelle, kwalitatieve registratie, tarificatie, Sciensano-rapportage en heldere patiëntverslagen." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="color-scheme" content="light" />
+  <meta name="author" content="JS-Reporting" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="JS-Reporting: registratie van orthopedische procedures" />
+  <meta property="og:description" content="Snelle registratie, automatische tarificatie, Sciensano-rapportage en duidelijke verslagen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+  <!-- <meta property="og:image" content="dist/assets/landingChirurgWondering.png" /> -->
+  <meta property="og:site_name" content="JS-Reporting" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JS-Reporting: registratie van orthopedische procedures" />
+  <meta name="twitter:description" content="Snelle registratie, automatische tarificatie, Sciensano-rapportage en duidelijke verslagen." />
+  <!-- <meta name="twitter:image" content="dist/assets/landingChirurgWondering.png" /> -->
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="dist/assets/favicon.svg" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="dist/styles.css" />
   <script src="dist/script.js"></script>
   <link
@@ -16,7 +42,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-white/95 backdrop-blur border-b border-slate-200 z-10">
+  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-stone-100 backdrop-blur border-b border-slate-200 z-10">
     <div class="flex items-center">
       <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
         <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
@@ -37,10 +63,11 @@
     </div>
     
     <div class="font-montserrat">
-      <button class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
-        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-        <span>Plan demo</span>
-      </button>
+      <a href="https://calendly.com/jouwnaam/15min" target="_blank"
+      class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
+      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+      <span>Plan demo</span>
+    </a>
     </div>
     <div id="showMenu" class="hidden md:hidden" aria-hidden="true">
       <img src='dist/assets/logos/Menu.svg' alt="Menu icon" />
@@ -50,17 +77,19 @@
 
   <!-- Hero -->
   <section
-    class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-gradient-to-b from-slate-50 to-slate-200">
+    class="pt-24 md:mt-0 section-full text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 section-blue">
     <div class="md:flex-1 md:mr-10">
       <h1 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-7">
-        Efficiënte registratie van orthopedische procedures.
+        Efficiënte kwalitatieve registratie van orthopedische procedures.
         <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
           
         </span>
       </h1>
       <p class="font-pt-serif font-normal mb-7 max-w-xl text-slate-700">
-        Met onze software registreer je snel de uitgevoerde procedure. Na een effiëcente invoer van de gegevens
-        zorgen wij voor <span class="underline decoration-sky-500	decoration-solid decoration-2">tarificatie</span>, eventuele rapportage naar <span class="underline decoration-sky-500	decoration-solid decoration-2">Sciensano</span> en een <span class="underline decoration-sky-500	decoration-solid decoration-2">duidelijk verslag</span> voor de patiënt.
+        Met onze software registreer je snel de uitgevoerde procedure. 
+        We zorgen voor <span class="underline decoration-sky-500	decoration-solid decoration-2">tarificatie</span>, 
+        rapportage naar <span class="underline decoration-sky-500	decoration-solid decoration-2">Sciensano</span> 
+        en een <span class="underline decoration-sky-500	decoration-solid decoration-2">helder verslag</span>.
       </p>
       <div class="font-montserrat hidden md:block">
         <a href="#how-it-works" class="inline-flex items-center gap-3 text-slate-900 hover:text-black transition">
@@ -88,26 +117,35 @@
     </div>
   </section>
 
+  <!-- Problem question -->
+  <section class="sectionSize section-full section-dark">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h2 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+        Je bent een goede chirurg maar je vindt rapporteren verschrikkelijk?
+      </h2>
+    </div>
+  </section>
+
   <!-- How it works -->
-  <section id="how-it-works" class="bg-black text-white sectionSize">
+  <section id="how-it-works" class="section-blue sectionSize section-full">
     <div>
-      <h2 class="secondaryTitle bg-underline2 bg-100%">Registratie in 3 snelle stappen</h2>
+      <h2 class="secondaryTitle bg-underline3 bg-100%">Wij maken het eenvoudig</h2>
     </div>
     <div class="flex flex-col md:flex-row">
       <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 rounded-full bg-secondary text-white h-12 w-12 flex justify-center items-center mb-3">
+        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>          
         </div>
         <h3 class="font-montserrat font-medium text-xl mb-2">1. Patiënt informatie</h3>
         <p class="text-center font-montserrat">
-          Importeer de belangrijkste patiënt informatie uit het EPD of voer deze handmatig in. We slaan geen informatie
+          Importeer de belangrijkste patiënt informatie uit het EPD (bv Hix) of voer deze handmatig in. We slaan geen informatie
           op van de patiënt die gelinkt zijn aan de persoon zoals naam/voornaam of rijksregisternummer.
         </p>
       </div>
       <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 rounded-full bg-secondary text-white h-12 w-12 flex justify-center items-center mb-3">
+        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
           </svg>
@@ -119,7 +157,7 @@
         </p>
       </div>
       <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 rounded-full bg-secondary text-white h-12 w-12 flex justify-center items-center mb-3">
+        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
           </svg>          
@@ -132,8 +170,8 @@
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="sectionSize bg-secondary">
+  <!-- Alles automatisch geregeld -->
+  <section class="section-dark sectionSize section-full">
     <div>
       <h2 class="secondaryTitle bg-underline3 bg-100%">Alles automatisch geregeld</h2>
     </div>
@@ -172,9 +210,10 @@
       <div class="flex items-start font-montserrat my-6 mr-10">
         <!-- <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" /> -->
         <div>
-          <h3 class="font-semibold text-2xl">Dashboard</h3>
+          <h3 class="font-semibold text-2xl">Databank voor studies</h3>
           <p>
-            Bekijk in een oogopslag de uitgevoerde procedures, de patiënten en de statistieken van jouw orthopedische ingrepen.
+            Bekijk in een oogopslag de uitgevoerde procedures, de patiënten en de statistieken van jouw 
+            orthopedische ingrepen. Exporteer makkelijk datasets voor studies.
           </p>
         </div>
       </div>
@@ -182,10 +221,45 @@
     </div>
   </section>
 
-  <!-- John Snow sectie -->
-<section class="sectionSize bg-black text-white">
+<!-- Section with about tailor made detail forms for hip, knee, hand, foot, back -->
+<section class="sectionSize section-full section-blue">
   <div>
-    <h2 class="secondaryTitle bg-underline2 bg-100%">Geïnspireerd door arts John Snow</h2>
+    <h2 class="secondaryTitle bg-underline3 bg-100%">Op maat gemaakte formulieren</h2>
+  </div>
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="flex items-center gap-4 text-sm">
+      <img src="dist/assets/bodypartIcons/knee_flat.png" alt="Knie icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat">Detail formulieren voor TKP en artrosocopieën, met alle 
+        noodzakelijke informatie het patienten verslag en Sciensano rapportage.
+      </span>
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="dist/assets/bodypartIcons/foot_flat.png" alt="Voet icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat text-lg">Formulier op maat</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="dist/assets/bodypartIcons/elbow_flat.png" alt="Elleboog icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat text-lg">Formulier op maat</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="dist/assets/bodypartIcons/wrist_flat.png" alt="Pols icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat text-lg">Formulier op maat</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="dist/assets/bodypartIcons/dorsal-spine_flat.png" alt="Rug icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat text-lg">Formulier op maat</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="dist/assets/bodypartIcons/tibia_flat.png" alt="Tibia icoon" class="h-10 w-10 object-contain" />
+      <span class="font-montserrat text-lg">Formulier op maat</span>
+    </div>
+  </div>
+</section>
+
+  <!-- John Snow sectie -->
+<section class="sectionSize section-full section-dark">
+  <div>
+    <h2 class="secondaryTitle bg-underline3 bg-100%">Geïnspireerd door arts John Snow</h2>
   </div>
 
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -202,7 +276,7 @@
       </div>
     </div>
     <!-- Tekst (rechts op desktop, onder op mobiel) -->
-    <div class="font-montserrat text-neutral-200">
+    <div class="font-montserrat">
       <p class="mb-4">
         John Snow, een Engelse arts en statisticus, versloeg een cholera-uitbraak in Londen door casussen op een kaart te plotten.
         Door het visueel te koppelen aan waterpompen identificeerde hij de besmettingsbron — en kon de bron uitgezet worden.
@@ -222,7 +296,7 @@
 </section>
 
   <!-- Founders -->
-  <section class="sectionSize bg-secondary">
+  <section class="sectionSize section-full section-blue">
     <div>
       <h2 class="secondaryTitle bg-underline3 bg-100%">De oprichters</h2>
     </div>
@@ -234,12 +308,10 @@
         </div>
         <div class="font-montserrat">
           <h3 class="font-semibold text-xl flex items-center gap-3">Paul Gunst
-            <a href="#" aria-label="LinkedIn van Paul Gunst" class="text-slate-500 hover:text-slate-700">
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
+
           </h3>
           <p class="mt-2">
-            Paul is gepensioneerd orthopedisch chirurg. Hij voerde meer dan 2.000 heupoperaties uit. Hij was ook
+            Paul is gepensioneerd orthopedisch chirurg. Hij was ook
             hoofdarts van een groot Belgisch ziekenhuis en heeft een grondige kennis van geneeskunde.
           </p>
         </div>
@@ -256,7 +328,7 @@
             </a>
           </h3>
           <p class="mt-2">
-            Kasper is data scientist. Hij startte twee andere data-science gerelateerde startups.
+            Kasper is data-scientist. Hij startte twee andere data gerelateerde startups.
           </p>
         </div>
       </div>
@@ -264,7 +336,7 @@
   </section>
 
   <!-- Pricing -->
-  <section class="sectionSize bg-black text-white">
+  <!-- <section class="sectionSize section-full section-dark">
     <div>
       <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
     </div>
@@ -343,10 +415,10 @@
     </div>
     
     
-  </section>
+  </section> -->
 
   <!-- FAQ  -->
-  <section class="sectionSize items-start bg-secondary">
+  <!-- <section class="sectionSize items-start section-full section-blue">
     <div>
       <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
         FAQ
@@ -392,13 +464,10 @@
     </div>
     <hr class="w-full bg-black h-px" />
 
-  </section>
+  </section> -->
 
   <!-- Footer -->
-  <section class="bg-black sectionSize">
-    <div class="mb-4">
-      <img src='dist/assets/Logo_white.svg' alt="Logo" class="h-4" />
-    </div>
+  <!-- <section class="bg-black sectionSize">
     <div class="flex mb-8">
       <a href="#">
         <img src='dist/assets/logos/Facebook.svg' alt="Facebook logo" class="mx-4" />
@@ -414,9 +483,10 @@
       </a>
     </div>
     <div class="text-white font-montserrat text-sm">
-      © 2021 STARTUP. All rights reserved
+      JS-Reporting. All rights reserved
     </div>
-  </section>
+  </section> -->
+
 </body>
 
 </html>
