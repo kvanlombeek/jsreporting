@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - JS-Reporting</title>
+  <meta name="description" content="Log in to JS-Reporting." />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="color-scheme" content="light" />
+  <meta name="author" content="JS-Reporting" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Login - JS-Reporting" />
+  <meta property="og:description" content="Log in to JS-Reporting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/login.html" />
+  <meta property="og:site_name" content="JS-Reporting" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Login - JS-Reporting" />
+  <meta name="twitter:description" content="Log in to JS-Reporting." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="dist/assets/favicon.svg" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="dist/styles.css" />
+  <script src="dist/script.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />  
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center navbar-background backdrop-blur z-10">
+    <div class="flex items-center">
+      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
+        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+          <title>JS-Reporting</title>
+      
+          <!-- Driehoek naar beneden -->
+          <polygon points="0,0 15,30 30,0"
+                   fill="#0F172A" />
+      
+          <!-- Tekst -->
+          <text x="42" y="22" 
+                font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+                font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">
+            JS-REPORTING
+          </text>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="font-montserrat">
+      <a href="login.html"
+      class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
+      <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+      <span>Log in</span>
+    </a>
+    </div>
+    <div id="showMenu" class="hidden md:hidden" aria-hidden="true">
+      <img src='dist/assets/logos/Menu.svg' alt="Menu icon" />
+    </div>
+  </nav>
+  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down" aria-hidden="true"></div>
+
+  <!-- Empty page content with same background styling as index hero -->
+  <section
+    class="pt-24 md:mt-0 section-full text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 section-blue">
+    <div class="w-11/12 max-w-md p-10 bg-white rounded-xl shadow-lg shadow-black/10 mx-auto flex flex-col gap-5">
+      <h1 class="font-montserrat font-semibold" style="font-size:24px">Login</h1>
+      <p class="font-montserrat text-slate-600">
+        Login to Retool by entering your AZ Delta email adres
+      </p>
+      <form class="flex flex-col gap-3" action="#" method="post" novalidate>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="name@azdelta.be"
+          required
+          class="w-full px-4 py-3 border-2 border-solid border-slate-400 rounded-lg text-base focus:border-sky-500 mt-4"
+          aria-label="Email address"
+        />
+        <button
+          class="w-full px-4 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition inline-flex items-center justify-center gap-2"
+          type="button"
+        >
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          <span>Send Magic Link</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</body>
+
+</html>
+
