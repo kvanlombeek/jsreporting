@@ -42,7 +42,7 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-stone-100 backdrop-blur border-b border-slate-200 z-10">
+  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center navbar-background backdrop-blur z-10">
     <div class="flex items-center">
       <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
         <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
@@ -62,11 +62,18 @@
       </a>
     </div>
     
-    <div class="font-montserrat">
+    <!-- <div class="font-montserrat">
       <a href="https://calendly.com/jouwnaam/15min" target="_blank"
       class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
       <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
       <span>Plan demo</span>
+    </a>
+    </div> -->
+    <div class="font-montserrat">
+      <a href="#"
+      class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
+      <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+      <span>Log in</span>
     </a>
     </div>
     <div id="showMenu" class="hidden md:hidden" aria-hidden="true">
@@ -80,7 +87,7 @@
     class="pt-24 md:mt-0 section-full text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 section-blue">
     <div class="md:flex-1 md:mr-10">
       <h1 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-7">
-        Efficiënte kwalitatieve registratie van orthopedische procedures.
+        One-stop shop voor registratie van orthopedische procedures.
         <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
           
         </span>
@@ -117,223 +124,7 @@
     </div>
   </section>
 
-  <!-- Problem question -->
-  <section class="sectionSize section-full section-dark">
-    <div class="max-w-4xl mx-auto text-center px-4">
-      <h2 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-        Je bent een goede chirurg maar je vindt rapporteren verschrikkelijk?
-      </h2>
-    </div>
-  </section>
 
-  <!-- How it works -->
-  <section id="how-it-works" class="section-blue sectionSize section-full">
-    <div>
-      <h2 class="secondaryTitle bg-underline3 bg-100%">Wij maken het eenvoudig</h2>
-    </div>
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-          </svg>          
-        </div>
-        <h3 class="font-montserrat font-medium text-xl mb-2">1. Patiënt informatie</h3>
-        <p class="text-center font-montserrat">
-          Importeer de belangrijkste patiënt informatie uit het EPD (bv Hix) of voer deze handmatig in. We slaan geen informatie
-          op van de patiënt die gelinkt zijn aan de persoon zoals naam/voornaam of rijksregisternummer.
-        </p>
-      </div>
-      <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-          </svg>
-          
-        </div>
-        <h3 class="text-center font-montserrat font-medium text-xl mb-2">2. Selecteer de juiste procedure</h3>
-        <p class="text-center font-montserrat">
-          We hebben een uitgebreide lijst van meer dan 500 orthopedische procedures. Selecteer één of meerdere procedures.
-        </p>
-      </div>
-      <div class="flex-1 mx-8 flex flex-col items-center my-4">
-        <div class="border-2 border-black rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
-          </svg>          
-        </div>
-        <h3 class="font-montserrat font-medium text-xl mb-2">3. Procedure details</h3>
-        <p class="text-center font-montserrat">
-          Afhankelijk van de gekozen procedure, vul je nog een op maat gemaakt detail formulier in.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Alles automatisch geregeld -->
-  <section class="section-dark sectionSize section-full">
-    <div>
-      <h2 class="secondaryTitle bg-underline3 bg-100%">Alles automatisch geregeld</h2>
-    </div>
-    <div class="md:grid md:grid-cols-2 md:grid-rows-2">
-
-      <div class="flex items-start font-montserrat my-6 mr-10">
-        <!-- <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" /> -->
-        <div>
-          <h3 class="font-semibold text-2xl">Tarificiatie</h3>
-          <p>
-            Elke procedure is gekoppeld aan een Nomenclatuur. Na registratie van de procedure zorgen wij voor de correcte tarificatie.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex items-start font-montserrat my-6 mr-10">
-        <!-- <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" /> -->
-        <div>
-          <h3 class="font-semibold text-2xl">Sciensano</h3>
-          <p>
-            Het detail formulier van elke procedure bevat de nodige informatie om een rapportage te maken voor Sciensano.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex items-start font-montserrat my-6 mr-10">
-        <!-- <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" /> -->
-        <div>
-          <h3 class="font-semibold text-2xl">Procedure verslag</h3>
-          <p>
-            Na registratie van de procedure ontvang je een duidelijk verslag dat je kan afdrukken of digitaal kan delen met de patiënt.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex items-start font-montserrat my-6 mr-10">
-        <!-- <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" /> -->
-        <div>
-          <h3 class="font-semibold text-2xl">Databank voor studies</h3>
-          <p>
-            Bekijk in een oogopslag de uitgevoerde procedures, de patiënten en de statistieken van jouw 
-            orthopedische ingrepen. Exporteer makkelijk datasets voor studies.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-<!-- Section with about tailor made detail forms for hip, knee, hand, foot, back -->
-<section class="sectionSize section-full section-blue">
-  <div>
-    <h2 class="secondaryTitle bg-underline3 bg-100%">Op maat gemaakte formulieren</h2>
-  </div>
-  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="flex items-center gap-4 text-sm">
-      <img src="dist/assets/bodypartIcons/knee_flat.png" alt="Knie icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat">Detail formulieren voor TKP en artrosocopieën, met alle 
-        noodzakelijke informatie het patienten verslag en Sciensano rapportage.
-      </span>
-    </div>
-    <div class="flex items-center gap-4">
-      <img src="dist/assets/bodypartIcons/foot_flat.png" alt="Voet icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat text-lg">Formulier op maat</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <img src="dist/assets/bodypartIcons/elbow_flat.png" alt="Elleboog icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat text-lg">Formulier op maat</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <img src="dist/assets/bodypartIcons/wrist_flat.png" alt="Pols icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat text-lg">Formulier op maat</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <img src="dist/assets/bodypartIcons/dorsal-spine_flat.png" alt="Rug icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat text-lg">Formulier op maat</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <img src="dist/assets/bodypartIcons/tibia_flat.png" alt="Tibia icoon" class="h-10 w-10 object-contain" />
-      <span class="font-montserrat text-lg">Formulier op maat</span>
-    </div>
-  </div>
-</section>
-
-  <!-- John Snow sectie -->
-<section class="sectionSize section-full section-dark">
-  <div>
-    <h2 class="secondaryTitle bg-underline3 bg-100%">Geïnspireerd door arts John Snow</h2>
-  </div>
-
-  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="w-full flex flex-col items-center md:items-start">
-      <div class="w-48 h-48 md:w-64 md:h-64 mx-auto overflow-hidden rounded-full shadow-lg flex justify-center">
-        <img 
-          src="dist/assets/john_snow_square.jpg" 
-          alt="Portret van John Snow" 
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div class="mt-3 text-sm text-gray-400 font-montserrat text-center md:text-left">
-        John Snow (1813–1858) — pionier in epidemiologie.
-      </div>
-    </div>
-    <!-- Tekst (rechts op desktop, onder op mobiel) -->
-    <div class="font-montserrat">
-      <p class="mb-4">
-        John Snow, een Engelse arts en statisticus, versloeg een cholera-uitbraak in Londen door casussen op een kaart te plotten.
-        Door het visueel te koppelen aan waterpompen identificeerde hij de besmettingsbron — en kon de bron uitgezet worden.
-      </p>
-
-      <p class="mb-4">
-        Net zoals Snow inzichten uit data gebruikte om directe actie te ondernemen, helpt onze software jouw geregistreerde procedures
-        om automatisch tarificatie te doen, rapportages voor Sciensano te genereren en heldere dashboards te vullen. Zo maak je van
-        ruwe registratiegegevens direct bruikbare inzichten.
-      </p>
-
-      <p class="text-sm text-gray-400">
-        (Bron: John Snow’s Broad Street onderzoek, 1854 — een klassiek voorbeeld van data-gedreven gezondheidsinterventie.)
-      </p>
-    </div>
-  </div>
-</section>
-
-  <!-- Founders -->
-  <section class="sectionSize section-full section-blue">
-    <div>
-      <h2 class="secondaryTitle bg-underline3 bg-100%">De oprichters</h2>
-    </div>
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Paul Gunst -->
-      <div class="flex items-start space-x-6">
-        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-3xl md:text-5xl flex-shrink-0" aria-label="Placeholder voor portret Paul Gunst">
-          <i class="fa-solid fa-user" aria-hidden="true"></i>
-        </div>
-        <div class="font-montserrat">
-          <h3 class="font-semibold text-xl flex items-center gap-3">Paul Gunst
-
-          </h3>
-          <p class="mt-2">
-            Paul is gepensioneerd orthopedisch chirurg. Hij was ook
-            hoofdarts van een groot Belgisch ziekenhuis en heeft een grondige kennis van geneeskunde.
-          </p>
-        </div>
-      </div>
-      <!-- Kasper Van Lombeek -->
-      <div class="flex items-start space-x-6">
-        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-3xl md:text-5xl flex-shrink-0" aria-label="Placeholder voor portret Kasper Van Lombeek">
-          <i class="fa-solid fa-user" aria-hidden="true"></i>
-        </div>
-        <div class="font-montserrat">
-          <h3 class="font-semibold text-xl flex items-center gap-3">Kasper Van Lombeek
-            <a href="#" aria-label="LinkedIn van Kasper Van Lombeek" class="text-slate-500 hover:text-slate-700">
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </h3>
-          <p class="mt-2">
-            Kasper is data-scientist. Hij startte twee andere data gerelateerde startups.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Pricing -->
   <!-- <section class="sectionSize section-full section-dark">

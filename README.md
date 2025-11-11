@@ -1,3 +1,7 @@
+# Icon set:
+
+https://www.flaticon.com/packs/anatomy-6
+
 # Startup Landing Page
 
 A starter template for very simple projects (no frameworks) with Tailwind CSS setup as a PostCSS plugin. You only need to install NPM.
