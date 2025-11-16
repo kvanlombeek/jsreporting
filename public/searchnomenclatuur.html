@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoek nomenclatuur - JS-Reporting</title>
+  <meta name="description" content="Log in to JS-Reporting." />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="color-scheme" content="light" />
+  <meta name="author" content="JS-Reporting" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Login - JS-Reporting" />
+  <meta property="og:description" content="Log in to JS-Reporting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/login.html" />
+  <meta property="og:site_name" content="JS-Reporting" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Login - JS-Reporting" />
+  <meta name="twitter:description" content="Log in to JS-Reporting." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="dist/assets/favicon.svg" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="dist/styles.css" />
+  <script src="dist/script.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer" />  
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="fixed flex items-center justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center navbar-background backdrop-blur z-10">
+    <div class="flex items-center">
+      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
+        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+          <title>JS-Reporting</title>
+      
+          <!-- Driehoek naar beneden -->
+          <polygon points="0,0 15,30 30,0"
+                   fill="#0F172A" />
+      
+          <!-- Tekst -->
+          <text x="42" y="22" 
+                font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
+                font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">
+            JS-REPORTING
+          </text>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="font-montserrat hidden md:flex items-center gap-4">
+      <a href="searchnomenclatuur.html"
+      class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <span>zoek nomenclatuur</span>
+      </a>
+      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
+      <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+      <span>Log in</span>
+      </a>
+    </div>
+    <button id="showMenu" class="md:hidden inline-flex items-center justify-center p-2" aria-label="Open menu">
+      <img src='dist/assets/logos/Menu.svg' alt="Menu icon" />
+    </button>
+  </nav>
+  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-white/95 backdrop-blur z-20" aria-hidden="true">
+    <div class="flex justify-between items-center">
+      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
+        <svg width="160" height="32" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+          <title>JS-Reporting</title>
+          <polygon points="0,0 15,30 30,0" fill="#0F172A" />
+          <text x="42" y="22" font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">JS-REPORTING</text>
+        </svg>
+      </a>
+      <button id="hideMenu" class="inline-flex items-center justify-center p-2" aria-label="Close menu">
+        <img src='dist/assets/logos/Cross.svg' alt="Close icon" />
+      </button>
+    </div>
+    <div class="mt-6 font-montserrat flex flex-col gap-3">
+      <a href="searchnomenclatuur.html" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span>zoek nomenclatuur</span>
+      </a>
+      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+        <span>Log in</span>
+      </a>
+    </div>
+  </div>
+
+  <div x-data="searchApp()" class="section-blue min-h-screen">
+  <!-- Empty page content with same background styling as index hero -->
+  <section
+    class="pt-24 md:mt-0 text-center md:text-left md:flex-row md:justify-between md:items-start lg:px-48 md:px-12 px-4">
+    <div class="w-11/12 md:w-10/12 max-w-lg p-6 md:p-8 bg-white rounded-xl shadow-lg shadow-black/10 mx-auto flex flex-col gap-5">
+      <h1 class="font-montserrat font-semibold" style="font-size:24px">Zoek in nomenclatuur</h1>
+      <p class="font-montserrat text-slate-600">
+        Typ een ingreep of trefwoord en vind de juiste procedure.
+      </p>
+      <form class="flex flex-col md:flex-row md:items-stretch gap-3" action="#" method="get" role="search" novalidate @submit.prevent="doSearch">
+        <input
+          id="q"
+          name="q"
+          type="search"
+          placeholder="Bijv. orthopedie schouder instabiliteit"
+          autocomplete="off"
+          class="w-full md:flex-1 px-4 py-3 border-2 border-solid border-slate-400 rounded-lg text-base focus:border-sky-500 mt-4 md:mt-0"
+          aria-label="Zoekterm"
+          x-model="term"
+          @keydown.enter.prevent="doSearch"
+        />
+        <button
+          class="w-full md:w-auto px-4 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition inline-flex items-center justify-center gap-2"
+          type="button"
+          :disabled="loading"
+          @click="doSearch"
+        >
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <span x-text="loading ? 'Zoeken…' : 'Zoeken'"></span>
+        </button>
+      </form>
+      
+      <template x-if="error">
+        <div class="px-4 py-3 rounded-lg bg-red-50 text-red-700 border border-red-200 font-montserrat" role="alert">
+          Fout bij zoeken: <span x-text="error"></span>
+        </div>
+      </template>
+
+      <template x-if="loading">
+        <div class="flex items-center gap-3 text-slate-600 font-montserrat">
+          <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+          <span>Bezig met zoeken…</span>
+        </div>
+      </template>
+
+      <div aria-live="polite" class="flex flex-col gap-3">
+        <template x-if="!loading && results.length === 0 && hasSearched">
+          <p class="font-montserrat text-slate-600">Geen resultaten gevonden.</p>
+        </template>
+      </div>
+    </div>
+  </section>
+  <section class="lg:px-48 md:px-12 px-4 py-8 bg-transparent">
+    <div class="w-full max-w-5xl mx-auto">
+      <ul class="flex flex-col gap-3">
+        <template x-for="(item, idx) in results" :key="(item.riziv_nummer || item.id || idx) + '-' + idx">
+          <li class="p-4 pt-12 border border-slate-200 rounded-lg text-left bg-white shadow-sm hover:shadow transition relative">
+            <span class="absolute top-4 right-4 inline-block px-2 py-1 text-xs rounded-full bg-slate-100 text-slate-700 whitespace-nowrap font-montserrat" x-text="'A: ' + (item.nc_ambulant || '-') + ' H: ' + (item.nc_gehospitaliseerd || '-') + (item.waarde ? ' ' + item.waarde : '')"></span>
+            <div>
+              <h3 class="font-montserrat font-semibold text-slate-900 text-base md:text-lg" x-text="item.label_short_nl || item.label_long_nl"></h3>
+              <p class="font-montserrat text-slate-600 mt-1 text-sm" x-text="item.label_long_nl"></p>
+            </div>
+            <div class="mt-3 grid grid-cols-1 gap-2 font-montserrat text-sm text-slate-700">
+              <div><span class="text-slate-500">Specialisme:</span> <span x-text="item.specialisme || '-'"></span></div>
+              <div><span class="text-slate-500">Bloedig:</span> <span x-text="item.bloedig === true ? 'Ja' : (item.bloedig === false ? 'Nee' : '-')"></span></div>
+            </div>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </section>
+  </div>
+
+  <script>
+    function searchApp() {
+      return {
+        term: "",
+        // Reserved for future filter usage; currently sent as empty strings
+        specialisme: "",
+        ambulant: "",
+        bloedig: "",
+        lichaamsdeel: "",
+        soortProcedureMain: "",
+        categoriePaul: "",
+        results: [],
+        loading: false,
+        error: null,
+        hasSearched: false,
+        async doSearch() {
+          if (!this.term || this.term.trim().length === 0) {
+            this.error = "Voer een zoekterm in.";
+            this.hasSearched = true;
+            this.results = [];
+            return;
+          }
+          this.loading = true;
+          this.error = null;
+          this.results = [];
+          this.hasSearched = true;
+          try {
+            const res = await fetch("https://dc26pq0kz7.execute-api.eu-west-1.amazonaws.com/similar-riziv", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                searchInput: this.term,
+                specialisme: this.specialisme,
+                ambulant: this.ambulant,
+                bloedig: this.bloedig,
+                lichaamsdeel: this.lichaamsdeel,
+                soortProcedureMain: this.soortProcedureMain,
+                categoriePaul: this.categoriePaul
+              })
+            });
+            if (!res.ok) {
+              throw new Error(`Netwerkfout (${res.status})`);
+            }
+            const data = await res.json();
+            console.log(data);
+            this.results = Array.isArray(data?.similar_riziv_nummers) ? data.similar_riziv_nummers : [];
+            console.log(this.results);
+          } catch (e) {
+            this.error = e?.message || "Onbekende fout";
+          } finally {
+            this.loading = false;
+          }
+        }
+      };
+    }
+  </script>
+</body>
+
+</html>
+

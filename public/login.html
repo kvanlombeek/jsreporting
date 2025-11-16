@@ -40,10 +40,10 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center navbar-background backdrop-blur z-10">
+  <nav class="fixed flex items-center justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center navbar-background backdrop-blur z-10">
     <div class="flex items-center">
       <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
-        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+        <svg class="h-8 w-auto" width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
           <title>JS-Reporting</title>
       
           <!-- Driehoek naar beneden -->
@@ -60,18 +60,46 @@
       </a>
     </div>
     
-    <div class="font-montserrat">
-      <a href="login.html"
-      class="py-2 px-4 text-white bg-black rounded-3xl inline-flex items-center gap-2">
+    <div class="font-montserrat hidden md:flex items-center gap-4">
+      <a href="searchnomenclatuur.html"
+      class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <span>zoek nomenclatuur</span>
+      </a>
+      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
       <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
       <span>Log in</span>
-    </a>
+      </a>
     </div>
-    <div id="showMenu" class="hidden md:hidden" aria-hidden="true">
-      <img src='dist/assets/logos/Menu.svg' alt="Menu icon" />
-    </div>
+    <button id="showMenu" class="md:hidden inline-flex items-center justify-center p-2 h-10 w-10" aria-label="Open menu">
+      <img src='dist/assets/logos/Menu.svg' alt="Menu icon" class="h-6 w-6" />
+    </button>
   </nav>
-  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down" aria-hidden="true"></div>
+  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-sky-200/95 backdrop-blur z-20" aria-hidden="true">
+    <div class="flex justify-between items-center">
+      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
+        <svg class="h-8 w-auto" width="160" height="32" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
+          <title>JS-Reporting</title>
+          <polygon points="0,0 15,30 30,0" fill="#0F172A" />
+          <text x="42" y="22" font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">JS-REPORTING</text>
+        </svg>
+      </a>
+      <button id="hideMenu" class="inline-flex items-center justify-center p-2 h-10 w-10" aria-label="Close menu">
+        <img src='dist/assets/logos/Cross.svg' alt="Close icon" class="h-6 w-6" />
+      </button>
+    </div>
+    <div class="mt-6 font-montserrat flex flex-col gap-3">
+      <a href="searchnomenclatuur.html" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span>zoek nomenclatuur</span>
+      </a>
+      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+        <span>Log in</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Empty page content with same background styling as index hero -->
   <section
