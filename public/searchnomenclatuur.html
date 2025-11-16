@@ -106,33 +106,39 @@
   <!-- Empty page content with same background styling as index hero -->
   <section
     class="pt-24 md:mt-0 text-center md:text-left md:flex-row md:justify-between md:items-start lg:px-48 md:px-12 px-4">
-    <div class="w-11/12 md:w-10/12 max-w-lg p-6 md:p-8 bg-white rounded-xl shadow-lg shadow-black/10 mx-auto flex flex-col gap-5">
+    <div class="w-full max-w-5xl p-6 md:p-8 bg-white rounded-xl shadow-lg shadow-black/10 mx-auto flex flex-col gap-5">
       <h1 class="font-montserrat font-semibold" style="font-size:24px">Zoek in nomenclatuur</h1>
       <p class="font-montserrat text-slate-600">
         Typ een ingreep of trefwoord en vind de juiste procedure.
       </p>
-      <form class="flex flex-col md:flex-row md:items-stretch gap-3" action="#" method="get" role="search" novalidate @submit.prevent="doSearch">
-        <input
-          id="q"
-          name="q"
-          type="search"
-          placeholder="Bijv. orthopedie schouder instabiliteit"
-          autocomplete="off"
-          class="w-full md:flex-1 px-4 py-3 border-2 border-solid border-slate-400 rounded-lg text-base focus:border-sky-500 mt-4 md:mt-0"
-          aria-label="Zoekterm"
-          x-model="term"
-          @keydown.enter.prevent="doSearch"
-        />
-        <button
-          class="w-full md:w-auto px-4 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition inline-flex items-center justify-center gap-2"
-          type="button"
-          :disabled="loading"
-          @click="doSearch"
-        >
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          <span x-text="loading ? 'Zoeken…' : 'Zoeken'"></span>
-        </button>
-      </form>
+      <form
+      class="search-form flex flex-col md:flex-row md:items-stretch gap-3"
+      @submit.prevent="doSearch"
+    >
+      <!-- TEXT FIELD (flexibel: neemt overgebleven ruimte, mag krimpen) -->
+      <input
+        id="q"
+        type="search"
+        placeholder="Bijv. orthopedie schouder instabiliteit"
+        class="search-input w-full md:flex-1 md:min-w-0 px-4 py-3 border-2 border-slate-400 rounded-lg text-base focus:border-sky-500"
+        x-model="term"
+        @keydown.enter.prevent="doSearch"
+      />
+    
+      
+    
+      <!-- SEARCH BUTTON (auto width on desktop) -->
+      <button
+        class="search-button w-full md:w-auto md:flex-none px-4 py-3 bg-black text-white rounded-lg font-medium hover:bg-black/90 transition inline-flex items-center justify-center gap-2"
+        type="button"
+        @click="doSearch"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span x-text="loading ? 'Zoeken…' : 'Zoeken'"></span>
+      </button>
+    </form>
+    
+    
       
       <template x-if="error">
         <div class="px-4 py-3 rounded-lg bg-red-50 text-red-700 border border-red-200 font-montserrat" role="alert">
@@ -190,6 +196,7 @@
         loading: false,
         error: null,
         hasSearched: false,
+        
         async doSearch() {
           if (!this.term || this.term.trim().length === 0) {
             this.error = "Voer een zoekterm in.";

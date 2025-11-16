@@ -778,9 +778,6 @@ video {
 .max-w-5xl{
   max-width: 64rem;
 }
-.max-w-lg{
-  max-width: 32rem;
-}
 .max-w-md{
   max-width: 28rem;
 }
@@ -1328,10 +1325,6 @@ video {
     height: 16rem;
   }
 
-  .md\:w-10\/12{
-    width: 83.333333%;
-  }
-
   .md\:w-32{
     width: 8rem;
   }
@@ -1348,8 +1341,16 @@ video {
     width: auto;
   }
 
+  .md\:min-w-0{
+    min-width: 0px;
+  }
+
   .md\:flex-1{
     flex: 1 1 0%;
+  }
+
+  .md\:flex-none{
+    flex: none;
   }
 
   .md\:grid-cols-2{
