@@ -4,321 +4,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JS-Reporting: registratie van orthopedische procedures</title>
+  <title>Reporth – Intelligent Orthopedic Administration</title>
+  
+  <!-- Meta copied from original file -->
   <meta name="description" content="JS-Reporting helpt orthopedische artsen met snelle, kwalitatieve registratie, tarificatie, Sciensano-rapportage en heldere patiëntverslagen." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0ea5e9" />
   <meta name="color-scheme" content="light" />
   <meta name="author" content="JS-Reporting" />
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="JS-Reporting: registratie van orthopedische procedures" />
   <meta property="og:description" content="Snelle registratie, automatische tarificatie, Sciensano-rapportage en duidelijke verslagen." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/" />
-  <!-- <meta property="og:image" content="dist/assets/landingChirurgWondering.png" /> -->
   <meta property="og:site_name" content="JS-Reporting" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="JS-Reporting: registratie van orthopedische procedures" />
   <meta name="twitter:description" content="Snelle registratie, automatische tarificatie, Sciensano-rapportage en duidelijke verslagen." />
-  <!-- <meta name="twitter:image" content="dist/assets/landingChirurgWondering.png" /> -->
 
-  <!-- Icons -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="dist/assets/favicon.svg" />
 
-  <!-- Performance hints -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="dist/styles.css" />
-  <script src="dist/script.js"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer" />  
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+
+  <!-- Optional: smoother font rendering -->
+  <style>
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
 </head>
 
-<body>
-  <!-- Navigation -->
-  <nav class="fixed flex items-center justify-between h-16 w-full lg:px-48 md:px-12 px-4 navbar-background backdrop-blur z-10">
-  
-    <div class="flex items-center h-full">
-      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
-        <svg class="h-10 w-auto flex-shrink-0" width="200" height="40" viewBox="0 0 200 40"
-             xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
-          <title>JS-Reporting</title>
-  
-          <!-- Driehoek naar beneden -->
-          <polygon points="0,0 15,30 30,0" fill="#0F172A" />
-  
-          <!-- Tekst -->
-          <text x="42" y="22"
-                font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial"
-                font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">
-            JS-REPORTING
-          </text>
-        </svg>
+<body class="bg-black text-white h-screen w-screen overflow-hidden">
+
+  <!-- Top navigation -->
+  <nav class="fixed top-0 inset-x-0 flex items-center justify-end h-16 w-full lg:px-48 md:px-12 px-4 z-10 bg-black/60 backdrop-blur border-b border-white/10">
+
+    <div class="font-montserrat hidden md:flex items-center justify-end gap-8 text-base lg:text-lg ml-auto">
+      <a href="searchnomenclatuur.html" class="inline-flex items-center gap-2 px-2 py-1 hover:text-gray-300 transition">
+        
+        <span>Zoek nomenclatuur</span>
       </a>
-    </div>
-  
-    <div class="font-montserrat hidden md:flex items-center gap-4">
-      <a href="searchnomenclatuur.html"
-         class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <span>zoek nomenclatuur</span>
-      </a>
-  
-      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center gap-2 px-2 py-1 text-slate-900 hover:text-black transition">
+      <!-- <a href="/demo" class="inline-flex items-center gap-2 px-2 py-1 hover:text-gray-300 transition">
+        
+        <span>Schedule a demo</span>
+      </a> -->
+      <a href="https://app.reporth.be/auth/login" class="inline-flex items-center gap-2 px-2 py-1 hover:text-gray-300 transition">
         <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
         <span>Log in</span>
       </a>
+
     </div>
-  
-    <button id="showMenu" class="md:hidden inline-flex items-center justify-center p-2 h-10 w-10"
-            aria-label="Open menu">
-      <img src="dist/assets/logos/Menu.svg" alt="Menu icon" class="h-6 w-6" />
+
+    <button id="showMenu" class="md:hidden inline-flex items-center justify-center p-2 h-10 w-10 text-white" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
     </button>
-  
   </nav>
-  
-  <div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-sky-200/95 backdrop-blur z-20">
-    <div class="flex justify-between items-center">
-      <a href="/" aria-label="JS-Reporting home" class="inline-flex items-center gap-3">
-        <svg class="h-10 w-auto" width="160" height="32" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">
-          <title>JS-Reporting</title>
-          <polygon points="0,0 15,30 30,0" fill="#0F172A" />
-          <text x="42" y="22" font-family="Montserrat, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial" font-weight="700" font-size="16" fill="#0F172A" letter-spacing="0.6">JS-REPORTING</text>
-        </svg>
-      </a>
-      <button id="hideMenu" class="inline-flex items-center justify-center p-2 h-10 w-10" aria-label="Close menu">
-        <img src='dist/assets/logos/Cross.svg' alt="Close icon" class="h-6 w-6" />
+
+  <!-- Mobile nav overlay -->
+  <div id="mobileNav" class="hidden fixed top-0 left-0 h-full w-full bg-black/95 backdrop-blur z-20" aria-hidden="true">
+    <div class="h-16 w-full lg:px-48 md:px-12 px-4 flex items-center justify-end border-b border-white/10">
+      <button id="hideMenu" class="inline-flex items-center justify-center p-2 h-10 w-10 text-white" aria-label="Close menu">
+        <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="mt-6 font-montserrat flex flex-col gap-3">
-      <a href="searchnomenclatuur.html" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <span>zoek nomenclatuur</span>
+    <div class="px-4 py-6 flex flex-col gap-3 font-montserrat text-lg">
+      <a href="searchnomenclatuur.html" class="inline-flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-white/10 transition">
+        <span>Zoek nomenclatuur</span>
       </a>
-      <a href="https://app.js-reporting.com/auth/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-2 py-2 text-slate-900 hover:text-black transition">
-        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+      <a href="/demo" class="inline-flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-white/10 transition">
+        <span>Schedule a demo</span>
+      </a>
+      <a href="https://app.js-reporting.com/auth/login" class="inline-flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-white/10 transition">
         <span>Log in</span>
       </a>
     </div>
   </div>
 
-  <!-- Hero -->
-  <section
-    class="pt-28 md:mt-0 section-full text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 section-blue">
-    <div class="md:flex-1 md:mr-10">
-      <h1 class="font-pt-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-7">
-        One-stop-shop registratie orthopedische procedures.
-        <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
-          
-        </span>
-      </h1>
-      <p class="font-pt-serif font-normal mb-7 max-w-xl text-slate-700">
-        Met onze software registreer je snel de uitgevoerde procedure. 
-        We zorgen voor <span class="underline decoration-sky-500	decoration-solid decoration-2">tarificatie</span>, 
-        rapportage naar <span class="underline decoration-sky-500	decoration-solid decoration-2">Sciensano</span> 
-        en een <span class="underline decoration-sky-500	decoration-solid decoration-2">helder verslag</span>.
-      </p>
-      <div class="font-montserrat hidden md:block">
-        <a href="https://calendly.com/kasper-vanlombeek/introductie-js-reporting" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 bg-sky-500 
-        text-white rounded-xl font-medium hover:bg-sky-400 transition">
-          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-          <span>plan een demo meeting</span>
-        </a>
-      </div>
-      <!-- <div class="font-montserrat hidden md:block">
-        <a href="#how-it-works" class="inline-flex items-center gap-3 text-slate-900 hover:text-black transition">
-          <img src='dist/assets/arrowDown.png' alt="Pijl naar beneden" class="h-5 w-5 md:h-6 md:w-6" />
-          <span class="text-lg md:text-xl font-semibold">meer ontdekken</span>
-        </a>
-      </div> -->
-    </div>
-    <div class="flex flex-col items-center md:block md:flex-1">
-      <!-- <div class="relative">
-        <img src='dist/assets/Highlight1.svg' alt="" class="absolute -top-16 -left-10" />
-      </div> -->
-      <div class="relative p-3">
-        <img src='dist/assets/landingChirurgWondering.png' alt="Macbook" class="" />
-      </div>
-      <div class="md:hidden mt-4 mb-8 flex justify-center font-montserrat">
-        <a href="https://calendly.com/jouwnaam/15min" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 bg-sky-500 
-        text-white rounded-xl font-medium hover:bg-sky-400 transition">
-          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-          <span>plan een demo meeting</span>
-        </a>
-      </div>
-      <!-- <div class="relative">
-        <img src='dist/assets/Highlight2.svg' alt="" class="absolute -bottom-10 -right-6" />
-      </div> -->
-    </div>
-    <!-- <div class="md:hidden mt-4 mb-8 flex justify-center">
-      <a href="#how-it-works" class="inline-flex items-center gap-3 text-slate-900 hover:text-black transition">
-        <img src='dist/assets/arrowDown.png' alt="Pijl naar beneden" class="h-5 w-5" />
-        <span class="text-lg font-semibold">meer ontdekken</span>
-      </a>
-    </div> -->
-  </section>
+  <!-- Centered logo -->
+  <main class="flex h-full w-full items-center justify-center">
+    <img src="dist/assets/logo_reporth.png" alt="Reporth logo" class="h-48 md:h-64 lg:h-80 w-auto" />
+  </main>
 
+  <script>
+    (function () {
+      const showMenu = document.getElementById('showMenu');
+      const hideMenu = document.getElementById('hideMenu');
+      const mobileNav = document.getElementById('mobileNav');
 
+      if (!showMenu || !hideMenu || !mobileNav) return;
 
-  <!-- Pricing -->
-  <!-- <section class="sectionSize section-full section-dark">
-    <div>
-      <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
-    </div>
-    <div class="flex w-full flex-col md:flex-row">
+      const open = () => {
+        mobileNav.classList.remove('hidden');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        showMenu.setAttribute('aria-expanded', 'true');
+      };
 
-      <div class="flex flex-col mx-6 shadow-2xl bg-secondary rounded-2xl py-5 px-8 my-8 md:mt-24 md:flex-1">
-        <h3 class="font-pt-serif font-normal text-2xl mb-4">
-          Per procedure
-        </h3>
-        <div class="font-montserrat font-bold text-2xl mb-4">
-          €5 
-          <span class="font-normal text-base"> / procedure</span>
-        </div>
-    
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Betaal per ingegeven procedure</p>
-        </div>
-    
-        <button class="border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
-          Choose plan
-        </button>
-      </div>
-    
-      <div class="relative flex flex-col mx-6 rounded-2xl py-5 px-8 my-8 md:mt-12 md:flex-1 bg-white text-slate-900 shadow-xl ring-2 ring-white/60">
-        <span class="absolute -top-3 left-6 inline-flex items-center rounded-full bg-black text-white px-3 py-1 text-xs font-montserrat">Meest gekozen</span>
-        <h3 class="font-pt-serif font-normal text-2xl mb-4">
-          Licentie arts
-        </h3>
-        <div class="font-montserrat font-bold text-2xl mb-4">
-          €100
-          <span class="font-normal text-base"> / month</span>
-        </div>
-    
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Ongelimiteerd aantal procedures</p>
-        </div>
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Benefit #2</p>
-        </div>
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Benefit #3</p>
-        </div>
-    
-        <button class="bg-black text-white rounded-xl text-lg py-3 mt-4 transition hover:-translate-y-0.5">
-          Choose plan
-        </button>
-      </div>
-    
-      <div class="flex flex-col mx-6 shadow-2xl bg-secondary rounded-2xl py-5 px-8 my-8 md:mt-24 md:flex-1">
-        <h3 class="font-pt-serif font-normal text-2xl mb-4">
-          Licentie dienst
-        </h3>
-        <div class="font-montserrat font-bold text-2xl mb-4">
-          $1000
-          <span class="font-normal text-base"> / month</span>
-        </div>
-    
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Ongelimiteerd aantal procedures</p>
-        </div>
-        <div class="flex">
-          <img src="dist/assets/logos/CheckedBox.svg" alt="" class="mr-1" />
-          <p>Tot maximaal 20 artsen</p>
-        </div>
-    
-        <button class="border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
-          Choose plan
-        </button>
-      </div>
-    
-    </div>
-    
-    
-  </section> -->
+      const close = () => {
+        mobileNav.classList.add('hidden');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        showMenu.setAttribute('aria-expanded', 'false');
+      };
 
-  <!-- FAQ  -->
-  <!-- <section class="sectionSize items-start section-full section-blue">
-    <div>
-      <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
-        FAQ
-      </h2>
-    </div>
+      showMenu.addEventListener('click', open);
+      hideMenu.addEventListener('click', close);
 
-    <div toggleElement class="w-full py-4">
-      <div class="flex justify-between items-center">
-        <div question class="font-montserrat font-medium mr-auto">
-          Where can I get this HTML template?
-        </div>
-        <img src='dist/assets/logos/CaretRight.svg' alt="" class="transform transition-transform" />
-      </div>
-      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-        You can download it on Gumroad.com
-      </div>
-    </div>
-    <hr class="w-full bg-black h-px" />
+      mobileNav.addEventListener('click', (e) => {
+        if (e.target === mobileNav) close();
+      });
 
-    <div toggleElement class="w-full py-4">
-      <div class="flex justify-between items-center">
-        <div question class="font-montserrat font-medium mr-auto">
-          Is this HTML template free?
-        </div>
-        <img src='dist/assets/logos/CaretRight.svg' alt="" class="transform transition-transform" />
-      </div>
-      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-        Yes! For you it is free.
-      </div>
-    </div>
-    <hr class="w-full bg-black h-px" />
-
-    <div toggleElement class="w-full py-4">
-      <div class="flex justify-between items-center">
-        <div question class="font-montserrat font-medium mr-auto">
-          Am I awesome?
-        </div>
-        <img src='dist/assets/logos/CaretRight.svg' alt="" class="transform transition-transform" />
-      </div>
-      <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-        Yes! No doubt about it.
-      </div>
-    </div>
-    <hr class="w-full bg-black h-px" />
-
-  </section> -->
-
-  <!-- Footer -->
-  <!-- <section class="bg-black sectionSize">
-    <div class="flex mb-8">
-      <a href="#">
-        <img src='dist/assets/logos/Facebook.svg' alt="Facebook logo" class="mx-4" />
-      </a>
-      <a href="#">
-        <img src='dist/assets/logos/Youtube.svg' alt="Youtube logo" class="mx-4" />
-      </a>
-      <a href="#">
-        <img src='dist/assets/logos/Instagram.svg' alt="Instagram logo" class="mx-4" />
-      </a>
-      <a href="#">
-        <img src='dist/assets/logos/Twitter.svg' alt="Twitter logo" class="mx-4" />
-      </a>
-    </div>
-    <div class="text-white font-montserrat text-sm">
-      JS-Reporting. All rights reserved
-    </div>
-  </section> -->
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
 
 </body>
-
 </html>
