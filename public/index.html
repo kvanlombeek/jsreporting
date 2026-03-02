@@ -47,7 +47,7 @@
   </style>
 </head>
 
-<body class="bg-black text-white h-screen w-screen overflow-hidden">
+<body class="bg-black text-white min-h-screen w-screen flex flex-col">
 
   <!-- Top navigation -->
   <nav class="fixed top-0 inset-x-0 flex items-center justify-end h-16 w-full lg:px-48 md:px-12 px-4 z-10 bg-black/60 backdrop-blur border-b border-white/10">
@@ -77,32 +77,65 @@
   </nav>
 
   <!-- Centered logo and tagline -->
-  <main class="flex flex-col h-full w-full items-center justify-center text-center ">    
+  <div class="flex-1 flex flex-col items-center justify-center gap-10 pt-24 pb-16">
+    <main class="flex flex-col w-full items-center justify-center text-center">    
 
-    <div class="h-24 w-auto mb-4">
-      <img src="dist/assets/logo_reporth_light.svg" alt="Reporth logo" class="h-full w-auto" />
-    </div>
+      <div class="h-24 w-auto mb-4">
+        <img src="dist/assets/logo_reporth_light.svg" alt="Reporth logo" class="h-full w-auto" />
+      </div>
     
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 tracking-tight leading-tight">
-        Surgical reporting simplified
-    </h1>
-    <p class="text-gray-400 text-sm md:text-base mb-8 max-w-md">
-        Fast and efficient procedure based reporting.
-    </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 tracking-tight leading-tight">
+          Surgical reporting simplified
+      </h1>
+      <p class="text-gray-400 text-sm md:text-base mb-8 max-w-md">
+          Fast and efficient procedure based reporting.
+      </p>
     
-    <div class="relative inline-block p-[1px] rounded-full bg-gradient-to-r from-gray-600 to-[#58ffe3]">
-      <a
-        href="https://calendly.com/kasper-vanlombeek/introductie-js-reporting"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-8 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-opacity-80 transition-all duration-300 block"
-      >
-        Book a demo
-      </a>
-    </div>
+      <div class="relative inline-block p-[1px] rounded-full bg-gradient-to-r from-gray-600 to-[#58ffe3]">
+        <a
+          href="https://calendly.com/kasper-vanlombeek/introductie-js-reporting"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-3 rounded-full bg-black text-white text-sm font-medium hover:bg-opacity-80 transition-all duration-300 block"
+        >
+          Book a demo
+        </a>
+      </div>
+    </main>
 
+  <!-- Testimonials -->
+    <section class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-10">
+          
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-sm border border-white/5">
+          <p class="text-sm leading-relaxed text-gray-200 mb-6">
+              "I was genuinely surprised how quickly I could document a complex shoulder procedure. Within minutes, all key parameters were captured and a structured report was generated with AI. It saves time without compromising on quality."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-center bg-cover" style="background-image: url('dist/assets/headshot_Muermans.png');"></div>
+              <div class="text-left">
+                  <p class="text-xs font-bold">Dr. Stijn Muermans</p>
+                  <p class="text-[10px] text-gray-400">Shoulder, elbow and hand</p>
+              </div>
+          </div>
+      </div>
 
-  </main>
+      <div class="bg-white/10 backdrop-blur-md p-8 rounded-sm border border-white/5">
+          <p class="text-sm leading-relaxed text-gray-200 mb-6">
+              "For the first time, my surgical logbook truly belongs to me. Unlike patient records in the hospital system, where finding specific procedure data is nearly impossible, everything here is structured, searchable, and always available."
+          </p>
+          <div class="flex items-center gap-3">
+              <div
+                class="w-8 h-8 rounded-full bg-center bg-cover"
+                style="background-image: url('dist/assets/headshot_Luyckx.png');"
+              ></div>
+              <div class="text-left">
+                  <p class="text-xs font-bold">Dr. Thomas Luyckx</p>
+                  <p class="text-[10px] text-gray-400">Knee</p>
+              </div>
+          </div>
+      </div>
+    </section>
+  </div>
 
 </body>
 </html>
