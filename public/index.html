@@ -38,11 +38,21 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer" />
 
-  <!-- Optional: smoother font rendering -->
+  <!-- Optional: smoother font rendering and background -->
   <style>
     html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      /* Black overlay with background image shining through */
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("dist/assets/2025-01-29 KVL - Landing 169.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
   </style>
 </head>
