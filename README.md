@@ -1,3 +1,8 @@
+# Dev mode
+
+Terminal 1: npm run watch
+Terminal 2: python3 -m http.server 3000 -d public
+
 # Icon set:
 
 https://www.flaticon.com/packs/anatomy-6
